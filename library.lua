@@ -1,5 +1,5 @@
 local windows =  {}
-local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/Jxereas/UI-Libraries/main/notification_gui_library.lua", true))()
+
 local UIClosed = -0.4, 0,0.271, 0
 local UIOpened = 0.0109783234, 0, 0.191451475, 0
 
@@ -13,7 +13,11 @@ function windows:Create(options)
     local github = options.GitHubLink
     local title = options.Title
     local GameName = options.Game
-  Notification.new("success", "Lunar X", "Loading script...")
+    game.StarterGui:SetCore("SendNotification", {
+        Title = title,
+        Text = "Thanks for executing "..title..""..game.Players.LocalPlayer.Name.."!",
+        Duration = 5,
+        Logo = "rbxassetid://7072724538",
     })
 
     local LunaLibrary = Instance.new("ScreenGui")
