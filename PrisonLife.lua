@@ -1,3 +1,4 @@
+local windows = loadstring(game:HttpGet("https://www.lunarscriptz.tk/library.lua"))()
 local tab = win:NewTab({
     Title = "Information"
 })
