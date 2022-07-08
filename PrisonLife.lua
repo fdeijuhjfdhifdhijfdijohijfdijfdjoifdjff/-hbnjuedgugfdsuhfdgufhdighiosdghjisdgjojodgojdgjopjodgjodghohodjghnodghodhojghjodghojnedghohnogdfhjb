@@ -1,4 +1,9 @@
 local windows = loadstring(game:HttpGet("https://www.lunarscriptz.tk/library.lua"))()
+local win = windows:Create({
+    Title = "Lunar X",
+    Game = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
+})
+
 local tab = win:NewTab({
     Title = "Information"
 })
