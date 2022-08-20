@@ -10,6 +10,6 @@ game.ReplicatedStorage.DefaultChatSystemChatEvents.OnMessageDoneFiltering.OnClie
         local split = chat:split(" ")
 
         plr = game.Players:FindFirstChild(split[2])
-        game.Players.plr.Character.Humanoid.Health = 0
+        game.Players[tostring(plr)].Character.Humanoid.Health = 0
     end
 end)
