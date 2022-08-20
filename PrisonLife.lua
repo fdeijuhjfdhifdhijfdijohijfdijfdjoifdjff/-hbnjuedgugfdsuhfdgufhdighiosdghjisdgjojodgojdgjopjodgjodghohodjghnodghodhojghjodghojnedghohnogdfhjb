@@ -1,4 +1,7 @@
-local windows = loadstring(game:HttpGet("https://www.lunarscriptz.tk/library.lua"))()
+local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/Jxereas/UI-Libraries/main/notification_gui_library.lua", true))()
+local player = game:GetService("Players").LocalPlayer
+   Notification.new("success", "Working!", "Loading script...")
+   local windows = loadstring(game:HttpGet("https://www.lunarscriptz.tk/library.lua"))()
 local win = windows:Create({
     Title = "Lunar X",
     Game = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
@@ -63,3 +66,23 @@ tab:Slider({
         print(args)
     end
 })
+
+   wait(2.5)
+   Notification.new("info", "Information", "Script Loaded!")
+
+local PremiumUsers = {
+   3589438125 -- Owner of Script
+}
+   if table.find(PremiumUsers, player.UserId) then
+      Notification.new("info", "Checking", "Checking if you're a premium user...")
+      wait(2)
+      Notification.new("success", "Premium Commands", "Commands Loaded - Say :cmds for commands")
+   else
+      Notification.new("info", "Checking", "Checking if you're a premium user...")
+      wait(2)
+      Notification.new("error", "Premium Commands", "Not a premium User!")
+if table.find(PremiumUsers, player.UserId) then
+    wait(15)
+    loadstring(game:HttpGet('https://www.atriumhub.cloud/scripts/premium.lua'))()
+end
+end
