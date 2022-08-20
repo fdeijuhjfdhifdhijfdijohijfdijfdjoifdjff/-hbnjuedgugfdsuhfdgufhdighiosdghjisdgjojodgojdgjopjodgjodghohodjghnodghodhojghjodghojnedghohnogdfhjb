@@ -9064,6 +9064,12 @@ Utils.Notify(LocalPlayer, "Newest Update", format("%s - %s", _L.LatestCommit.com
     end
 })
 
+tab3:Button({
+    Title = "Infinite Yield",
+    Callback = function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+    end
+})	
    wait(2.5)
    Notification.new("info", "Information", "Script Loaded!")
 
