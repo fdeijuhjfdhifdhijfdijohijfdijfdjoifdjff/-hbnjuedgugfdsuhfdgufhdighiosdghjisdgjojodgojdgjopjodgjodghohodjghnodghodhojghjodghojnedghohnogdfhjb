@@ -1,7 +1,9 @@
 local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/Jxereas/UI-Libraries/main/notification_gui_library.lua", true))()
 local player = game:GetService("Players").LocalPlayer
    Notification.new("success", "Working!", "Loading script...")
-   local windows = loadstring(game:HttpGet("https://www.lunarscriptz.tk/library.lua"))()
+   local player = game.Players.LocalPlayer
+
+local windows = loadstring(game:HttpGet("https://www.lunarscriptz.tk/library.lua"))()
 local win = windows:Create({
     Title = "Lunar X",
     Game = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
@@ -9,6 +11,10 @@ local win = windows:Create({
 
 local tab = win:NewTab({
     Title = "Information"
+})
+
+local tab2 = win:NewTab({
+    Title = "Character"
 })
 
 tab:Label({
@@ -22,11 +28,17 @@ tab:Button({
     end
 })
 
-tab:Toggle({
-    Title = "Enable Rainbow Ui",
-    Description = "Enables Lunar X Rainbow Mode",
+tab2:Toggle({
+    Title = "Noclip",
+    Description = "Enables no clip for you.",
     Callback = function(args)
-        print(args)
+        local enabled = args
+        
+        while enabled do
+            setfflag("HumanoidParallelRemoveNoPhysics", "False")
+            setfflag("HumanoidParallelRemoveNoPhysicsNoSimulate2", "False")
+            wait()
+        end
     end
 })
 
@@ -34,36 +46,36 @@ tab:Toggle({
     Title = "Notifications",
     Description = "Notifications true/false",
     Callback = function(args)
-        print(args)
+    -- nothing to do with this right now
     end
 })
 
-tab:DropDown({
+tab2:DropDown({
     Text = "Teleport Method",
     PlaceHolder = 'Choose a Teleport Method...',
     Options = {'Instant',"Tween"},
     Callback = function(args)
-        print(args)
+    -- nothing to do with this atm
     end
 })
 
-tab:Slider({
+tab2:Slider({
     Title = "Walkspeed",
     MinValue = 16,
     Def = 0,
     MaxValue = 100,
     callback = function(args)
-        print(args)
+        player.Character.Humanoid.WalkSpeed = args
     end
 })
 
-tab:Slider({
+tab2:Slider({
     Title = "Jumpower",
     MinValue = 50,
     Def = 0,
     MaxValue = 100,
     callback = function(args)
-        print(args)
+        player.Character.Humanoid.JumpPower = args
     end
 })
 
