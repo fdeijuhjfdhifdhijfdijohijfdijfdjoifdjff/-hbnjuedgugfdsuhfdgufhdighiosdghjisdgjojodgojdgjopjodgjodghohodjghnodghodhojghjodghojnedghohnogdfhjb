@@ -9074,7 +9074,7 @@ tab3:Button({
    Notification.new("info", "Information", "Script Loaded!")
 
 local PremiumUsers = {
-   3589438125 -- Owner of Script
+   2788229376 -- Owner of Script
 }
    if table.find(PremiumUsers, player.UserId) then
       Notification.new("info", "Checking", "Checking if you're a premium user...")
