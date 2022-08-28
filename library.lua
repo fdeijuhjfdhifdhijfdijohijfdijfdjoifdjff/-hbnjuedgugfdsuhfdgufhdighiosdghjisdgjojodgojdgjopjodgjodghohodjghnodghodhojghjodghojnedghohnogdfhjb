@@ -29,6 +29,12 @@ function windows:Create(options)
 
     --Properties:
     
+     for i,v in pairs(game.CoreGui:GetChildren()) do
+        if v.Name == "Luna Library" then
+            v:Destroy()
+        end
+    end
+    
     ImageLabel.Parent = backFrame
     ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     ImageLabel.BackgroundTransparency = 1.000
