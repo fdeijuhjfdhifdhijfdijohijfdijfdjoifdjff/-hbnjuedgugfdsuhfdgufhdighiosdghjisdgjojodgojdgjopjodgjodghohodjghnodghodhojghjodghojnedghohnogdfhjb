@@ -67,12 +67,6 @@ function windows:Create(options)
 
     --Properties:
 
-    for i,v in pairs(game.CoreGui:GetChildren()) do
-        if v.Name == "Luna Library" then
-            v:Destroy()
-        end
-    end
-
     local UIS = game:GetService('UserInputService')
     local frame = backFrame
     local dragToggle = nil
