@@ -4,7 +4,7 @@ if game.Players.LocalPlayer.Name == Settings.Main then
     wait(5)
     loadstring(game:HttpGet("https://unset-order.000webhostapp.com/scripts/DaHood.lua"))();
     loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
-if game.Players.LocalPlayer.Name == Settings.Alt then
+else
     loadstring(game:HttpGet("https://unset-order.000webhostapp.com/scripts/summon.lua"))();
     loadstring(game:HttpGet("https://raw.githubusercontent.com/fatesc/fates-admin/main/main.lua"))();
 wait(0.5)
@@ -30,5 +30,4 @@ game.CoreGui.RobloxPromptGui.promptOverlay.DescendantAdded:Connect(function()
 end)
 game:GetService("VirtualInputManager"):SendKeyEvent(true,"X",false,game)
  
-end
 end
